@@ -5,7 +5,7 @@ ID = 'haxe'
 
 NAME = 'Haxe'
 
-VERSION = '4.0.5'
+VERSION = '4.1.1'
 
 SOURCE = "./sources/v/#{ VERSION }"
 
@@ -27,9 +27,13 @@ types = {
 
   'class' => 'Class',
 
+  'final class' => 'Class',
+
   'abstract' => 'Class',
 
   'enum' => 'Enum',
+
+  'enum abstract' => 'Enum',
 
   'interface' => 'Interface',
 
@@ -99,7 +103,7 @@ each_html '**/*.html' do | html, path |
 
       link_name = link.text
 
-      link_type = link.parent.parent[ :class ] == 'package' ? 'Package' : 'Module'
+      link_type = link.parent.parent[ :class ] == 'package' ? 'Package' : 'Type'
 
       make_entry_anchor link, link_name, link_type
 
